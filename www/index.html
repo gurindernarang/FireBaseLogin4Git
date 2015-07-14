@@ -36,16 +36,26 @@
     </ion-header-bar>
     <ion-content>
 
-        <div ng-if="authData.github" class="list card">
+        <div ng-if="authDataGithub.github" class="list card">
             <div class="item item-avatar">
-                <img ng-src="{{authData.github.cachedUserProfile.avatar_url}}" alt="">
-                <h2>{{authData.github.displayName}}</h2>
-                <p>{{authData.github.username}}</p>
+                <img ng-src="{{authDataGithub.github.cachedUserProfile.avatar_url}}" alt="">
+                <h2>{{authDataGithub.github.displayName}}</h2>
+                <p>{{authDataGithub.github.username}}</p>
                 <p>Github</p>
             </div>
         </div>
 
+        <div ng-if="authDataFacebook.facebook" class="list card">
+            <div class="item item-avatar">
+                <img ng-src="{{authDataFacebook.facebook.cachedUserProfile.avatar_url}}" alt="">
+                <h2>{{authDataFacebook.facebook.displayName}}</h2>
+                <p>{{authDataFacebook.facebook.username}}</p>
+                <p>Github</p>
+            </div>
+        </div>
         <i class="icon ion-social-github" style="font-size: 32px; font-weight: 600; float:left; margin-left: 45%;"  ng-click="loginGithub('github')"></i>
+
+        <i class="icon ion-social-facebook" style="font-size: 32px; font-weight: 600; float:right; margin-right: 45%;"  ng-click="loginfacebook()"></i>
 
     </ion-content>
     </body>
