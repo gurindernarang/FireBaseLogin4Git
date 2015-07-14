@@ -1,0 +1,13 @@
+
+ionicFirebase.controller("LoginCtrl", function ($scope) {
+    $scope.loginGithub = function(authMethod) {
+        var ref = new Firebase("https://gurinder.firebaseio.com");
+        ref.authWithOAuthPopup("github", function(error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+            } else {
+                console.log("Authenticated successfully with payload:", authData);
+            }
+        });
+    };
+});
